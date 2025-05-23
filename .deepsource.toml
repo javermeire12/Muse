@@ -3,6 +3,3 @@ version = 1
 [[analyzers]]
 name = "python"
 enabled = true
-
-[analyzers.meta]
-python_version = "3.11"  # or whatever version you’re using
