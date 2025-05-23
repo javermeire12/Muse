@@ -1,0 +1,27 @@
+{
+  "tasks": [
+    {
+      "id": null,
+      "content": "Test task from Claude simulation.",
+      "is_completed": false,
+      "timestamp": "2025-05-21T15:50:11.639788"
+    },
+    {
+      "id": null,
+      "content": "Test task from Claude simulation.",
+      "is_completed": false,
+      "timestamp": "2025-05-21T15:50:50.546091"
+    }
+  ],
+  "memory": [
+    {
+      "insight": "Sample insight to verify Ash ingestion.",
+      "timestamp": "2025-05-21T15:50:11.639788"
+    },
+    {
+      "insight": "Sample insight to verify Ash ingestion.",
+      "timestamp": "2025-05-21T15:50:50.546091"
+    }
+  ],
+  "python_functions": {}
+}

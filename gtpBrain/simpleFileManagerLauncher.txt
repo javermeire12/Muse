@@ -1,0 +1,111 @@
+@echo off
+title AI File Manager
+color 0A
+
+echo ========================================
+echo           AI File Manager
+echo ========================================
+echo.
+
+:menu
+echo Choose an option:
+echo 1. Initialize directory structure
+echo 2. Register a new file
+echo 3. Share a file with another AI
+echo 4. Update an existing file
+echo 5. List registered files
+echo 6. Search for files
+echo 7. Show file details
+echo 8. Exit
+echo.
+
+set /p choice=Enter your choice (1-8): 
+
+if "%choice%"=="1" goto init
+if "%choice%"=="2" goto register
+if "%choice%"=="3" goto share
+if "%choice%"=="4" goto update
+if "%choice%"=="5" goto list
+if "%choice%"=="6" goto search
+if "%choice%"=="7" goto describe
+if "%choice%"=="8" goto end
+
+echo Invalid choice. Please try again.
+pause
+cls
+goto menu
+
+:init
+cls
+echo Initializing directory structure...
+python ai_file_manager.py init
+pause
+cls
+goto menu
+
+:register
+cls
+echo === Register a new file ===
+set /p file_path=Enter file path: 
+set /p creator=Creator AI (claude/gpt/gemini/llama): 
+set /p file_type=File type (code/data/doc/image/other): 
+set /p description=Description: 
+set /p tags=Tags (space-separated, leave empty for none): 
+
+if "%tags%"=="" (
+    python ai_file_manager.py register "%file_path%" %creator% %file_type% "%description%"
+) else (
+    python ai_file_manager.py register "%file_path%" %creator% %file_type% "%description%" --tags %tags%
+)
+pause
+cls
+goto menu
+
+:share
+cls
+echo === Share a file ===
+set /p filename=Enter filename: 
+set /p target_ai=AI to share with (claude/gpt/gemini/llama): 
+python ai_file_manager.py share "%filename%" %target_ai%
+pause
+cls
+goto menu
+
+:update
+cls
+echo === Update an existing file ===
+set /p file_path=Enter file path: 
+python ai_file_manager.py update "%file_path%"
+pause
+cls
+goto menu
+
+:list
+cls
+echo === List registered files ===
+python ai_file_manager.py list
+pause
+cls
+goto menu
+
+:search
+cls
+echo === Search for files ===
+set /p query=Enter search query: 
+python ai_file_manager.py search "%query%"
+pause
+cls
+goto menu
+
+:describe
+cls
+echo === Show file details ===
+set /p filename=Enter filename: 
+python ai_file_manager.py describe "%filename%"
+pause
+cls
+goto menu
+
+:end
+echo Goodbye!
+exit

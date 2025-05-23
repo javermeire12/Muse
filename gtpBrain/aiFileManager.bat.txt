@@ -1,0 +1,145 @@
+@echo off
+setlocal enabledelayedexpansion
+
+echo =======================================
+echo AI File Manager Launcher
+echo =======================================
+echo.
+
+REM Check if Python is installed
+python --version >nul 2>&1
+if %ERRORLEVEL% NEQ 0 (
+    echo ERROR: Python is not installed or not in PATH
+    echo Please install Python 3 and try again
+    pause
+    exit /b 1
+)
+
+REM Get the directory of the batch file
+set "SCRIPT_DIR=%~dp0"
+
+REM Check if the Python script exists
+set "PYTHON_SCRIPT=%SCRIPT_DIR%ai_file_manager.py"
+if not exist "%PYTHON_SCRIPT%" (
+    echo ERROR: ai_file_manager.py not found in the same directory
+    echo Please make sure both files are in the same folder
+    pause
+    exit /b 1
+)
+
+:menu
+echo.
+echo Select an option:
+echo 1. Initialize directory structure
+echo 2. Register a new file
+echo 3. Share a file with another AI
+echo 4. Update an existing file
+echo 5. List registered files
+echo 6. Search for files
+echo 7. Show file details
+echo 8. Run with custom command
+echo 9. Exit
+echo.
+
+set /p CHOICE="Enter choice (1-9): "
+
+if "%CHOICE%"=="1" (
+    echo.
+    echo Initializing directory structure...
+    python "%PYTHON_SCRIPT%" init
+    goto end
+) else if "%CHOICE%"=="2" (
+    echo.
+    echo === Register a new file ===
+    set /p FILE_PATH="Enter file path: "
+    set /p CREATOR="Creator AI (claude/gpt/gemini/llama): "
+    set /p FILE_TYPE="File type (code/data/doc/image/other): "
+    set /p DESCRIPTION="Description: "
+    set /p TAGS="Tags (space-separated, leave empty for none): "
+    
+    if not "%TAGS%"=="" (
+        python "%PYTHON_SCRIPT%" register "!FILE_PATH!" !CREATOR! !FILE_TYPE! "!DESCRIPTION!" --tags !TAGS!
+    ) else (
+        python "%PYTHON_SCRIPT%" register "!FILE_PATH!" !CREATOR! !FILE_TYPE! "!DESCRIPTION!"
+    )
+    goto end
+) else if "%CHOICE%"=="3" (
+    echo.
+    echo === Share a file ===
+    set /p FILENAME="Enter filename: "
+    set /p TARGET_AI="AI to share with (claude/gpt/gemini/llama): "
+    
+    python "%PYTHON_SCRIPT%" share "!FILENAME!" !TARGET_AI!
+    goto end
+) else if "%CHOICE%"=="4" (
+    echo.
+    echo === Update an existing file ===
+    set /p FILE_PATH="Enter file path: "
+    set /p VERSION="New version (leave empty for auto): "
+    set /p DESCRIPTION="New description (leave empty to keep current): "
+    set /p TAGS="New tags (space-separated, leave empty to keep current): "
+    
+    set CMD=python "%PYTHON_SCRIPT%" update "!FILE_PATH!"
+    if not "%VERSION%"=="" set CMD=!CMD! --version !VERSION!
+    if not "%DESCRIPTION%"=="" set CMD=!CMD! --description "!DESCRIPTION!"
+    if not "%TAGS%"=="" set CMD=!CMD! --tags !TAGS!
+    
+    !CMD!
+    goto end
+) else if "%CHOICE%"=="5" (
+    echo.
+    echo === List registered files ===
+    set /p CREATOR="Filter by creator (leave empty for all): "
+    set /p FILE_TYPE="Filter by type (leave empty for all): "
+    set /p TAG="Filter by tag (leave empty for all): "
+    set /p VERBOSE="Show details? (y/n): "
+    
+    set CMD=python "%PYTHON_SCRIPT%" list
+    if not "%CREATOR%"=="" set CMD=!CMD! --creator !CREATOR!
+    if not "%FILE_TYPE%"=="" set CMD=!CMD! --type !FILE_TYPE!
+    if not "%TAG%"=="" set CMD=!CMD! --tag !TAG!
+    if /i "%VERBOSE%"=="y" set CMD=!CMD! --verbose
+    
+    !CMD!
+    goto end
+) else if "%CHOICE%"=="6" (
+    echo.
+    echo === Search for files ===
+    set /p QUERY="Enter search query: "
+    set /p VERBOSE="Show details? (y/n): "
+    
+    set CMD=python "%PYTHON_SCRIPT%" search "!QUERY!"
+    if /i "%VERBOSE%"=="y" set CMD=!CMD! --verbose
+    
+    !CMD!
+    goto end
+) else if "%CHOICE%"=="7" (
+    echo.
+    echo === Show file details ===
+    set /p FILENAME="Enter filename: "
+    
+    python "%PYTHON_SCRIPT%" describe "!FILENAME!"
+    goto end
+) else if "%CHOICE%"=="8" (
+    echo.
+    echo === Run custom command ===
+    echo Example: search "python" --verbose
+    set /p CMD="Enter command: "
+    
+    python "%PYTHON_SCRIPT%" !CMD!
+    goto end
+) else if "%CHOICE%"=="9" (
+    echo.
+    echo Exiting...
+    exit /b 0
+) else (
+    echo.
+    echo Invalid choice. Please try again.
+    goto menu
+)
+
+:end
+echo.
+echo Press any key to return to menu...
+pause >nul
+goto menu

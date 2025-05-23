@@ -1,0 +1,31 @@
+C:\Users\jeffv\second_brain\,env.txt
+C:\Users\jeffv\second_brain\.,env.txt
+C:\Users\jeffv\second_brain\.env
+C:\Users\jeffv\second_brain\folder_structure.txt
+C:\Users\jeffv\second_brain\gtp_brain
+C:\Users\jeffv\second_brain\main.py
+C:\Users\jeffv\second_brain\memory.json
+C:\Users\jeffv\second_brain\test.JPG
+C:\Users\jeffv\second_brain\gtp_brain\2025-05-21_17-46_gtpmemory.json
+C:\Users\jeffv\second_brain\gtp_brain\2025-05-21_ash_memory_full_sync.json
+C:\Users\jeffv\second_brain\gtp_brain\2025-05-21_ash_memory_merged (1).json
+C:\Users\jeffv\second_brain\gtp_brain\2025-05-21_ash_memory_merged (2).json
+C:\Users\jeffv\second_brain\gtp_brain\2025-05-21_ash_memory_merged.json
+C:\Users\jeffv\second_brain\gtp_brain\2025-05-21_ash_memory_merged_updated.json
+C:\Users\jeffv\second_brain\gtp_brain\2025-05-21_gtpmemory.json
+C:\Users\jeffv\second_brain\gtp_brain\4ai_ash_system.py
+C:\Users\jeffv\second_brain\gtp_brain\aiFileManager.bat
+C:\Users\jeffv\second_brain\gtp_brain\aiFileManager.bat.txt
+C:\Users\jeffv\second_brain\gtp_brain\ai_shared
+C:\Users\jeffv\second_brain\gtp_brain\ash_pipeline_test_harness.py
+C:\Users\jeffv\second_brain\gtp_brain\ash_pipeline_test_harness_COPY_for_windows.py
+C:\Users\jeffv\second_brain\gtp_brain\camel_case_file_manager_launcher.txt
+C:\Users\jeffv\second_brain\gtp_brain\ChatGPTMemory.json
+C:\Users\jeffv\second_brain\gtp_brain\convertToCamel.bat
+C:\Users\jeffv\second_brain\gtp_brain\processed_inputs
+C:\Users\jeffv\second_brain\gtp_brain\renamed_python_script.py
+C:\Users\jeffv\second_brain\gtp_brain\simple_file_manager_launcher.txt
+C:\Users\jeffv\second_brain\gtp_brain\ai_shared\file_registry.json
+C:\Users\jeffv\second_brain\gtp_brain\ai_shared\file_sharing_usage.md
+C:\Users\jeffv\second_brain\gtp_brain\processed_inputs\Ash_Input_20250521_155012.json
+C:\Users\jeffv\second_brain\gtp_brain\processed_inputs\Ash_Input_20250521_155051.json

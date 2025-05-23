@@ -1,0 +1,11 @@
+{
+  "Claude_BackfillWriter_0521_v1.py": {
+    "creator": "claude",
+    "type": "code",
+    "description": "Firestore writer tool",
+    "version": "v1",
+    "shared_with": ["gpt"],
+    "status": "active",
+    "tags": ["ash", "firestore", "writer"]
+  }
+}

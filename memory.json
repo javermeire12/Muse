@@ -1,0 +1,46 @@
+[
+  {
+    "role": "user",
+    "content": "to message my doctor about my new insurance"
+  },
+  {
+    "role": "user",
+    "content": "call doc about new insurance"
+  },
+  {
+    "role": "user",
+    "content": "call doc about insurance"
+  },
+  {
+    "role": "user",
+    "content": "my face"
+  },
+  {
+    "role": "user",
+    "content": "sex"
+  },
+  {
+    "role": "user",
+    "content": "farts"
+  },
+  {
+    "role": "user",
+    "content": "\\this working"
+  },
+  {
+    "role": "user",
+    "content": "work"
+  },
+  {
+    "role": "user",
+    "content": "sex"
+  },
+  {
+    "role": "user",
+    "content": "This is my first time using the gtp api. how can i make it a bit nicer than a plain old command window"
+  },
+  {
+    "role": "user",
+    "content": "my childhood"
+  }
+]

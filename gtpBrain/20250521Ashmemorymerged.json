@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-05-21T18:20:37.645228",
+  "topic": "Ash System - Multi-AI Coordination and Memory Design",
+  "insights": [
+    "Ash is the central hub in Option B, coordinating all AI inputs and storing structured memory.",
+    "Claude is positioned as a tone/sync assistant who logs state updates and provides summaries.",
+    "Gemini focuses on architectural insight, memory modeling, and system design scaffolding.",
+    "Ash manages persistent memory as structured JSON logs with tagging, task tracking, and system prompts.",
+    "SYNC headers and structured metadata (SOURCE, TOPIC, QUERY, INSIGHT, TAGS, TIMESTAMP) will be used to route inputs through Ash.",
+    "Memory is being built in parallel with manual sync; Ash logs each routed AI reply with tags for future automation.",
+    "Option C is the future goal \u2014 a centralized HTTP hub \u2014 but Option B is active and optimized for transition.",
+    "Gemini provided a detailed breakdown of what to extract from Ash's behavior: routing logic, memory access, prompt engineering, error handling.",
+    "Claude suggested a memory schema and project state sync system, which Ash is now handling via SYNC tagging.",
+    "This coordination system is now the top priority \u2014 memory is being constructed implicitly through structured sync."
+  ]
+}
