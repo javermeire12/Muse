@@ -698,4 +698,3 @@ def main():
     # Update command
     update_parser = subparsers.add_parser("update", help="Update an existing file")
     update_parser.add_argument("file", help="Path to the updated file")
-    update
