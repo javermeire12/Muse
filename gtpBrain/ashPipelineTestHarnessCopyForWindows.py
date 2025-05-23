@@ -6,10 +6,6 @@ from datetime import datetime
 
 # ===== Ash Watcher Thread =====
 def run_ash_watcher():
-    import os
-    import json
-    import time
-    from datetime import datetime
 
     MEMORY_FILE = "ChatGPTMemory.json"
     INPUT_FILE = "Ash_Input.json"
