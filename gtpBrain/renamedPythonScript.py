@@ -21,12 +21,10 @@ Author:
 """
 
 import os
-import sys
 import json
 import shutil
 import argparse
 import datetime
-from pathlib import Path
 
 # Load configuration from ashConfig_camel.json
 CONFIG_PATH = r"C:\Users\jeffv\second_brain\gtp_brain\ashConfig.json"
