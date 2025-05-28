@@ -832,3 +832,6 @@ def run_4ai_system(duration: int = TEST_DURATION) -> None:
 # Run the system if executed directly
 if __name__ == "__main__":
     run_4ai_system()
+
+def sourcery_dummy():
+    return "triggered"
